@@ -8,8 +8,6 @@ export const calculo = () => {
 };
 
 // index_no_bloqueante.js
-
-
 // PROCESO HIJO
 // este process.on lo que hace es ejecutar el evento 'message' , que recibe un mensaje (msg)
 process.on('message', (msg) => {
@@ -19,7 +17,7 @@ process.on('message', (msg) => {
         console.log(`Start calculo, PID: ${process.pid}`);
         const sum = calculo(); // ejecuta el calculo
         process.send(sum); // cuando termina de realizar el calculo, le envía AL PADRE, el rtado del calculo
-
     }
 });
 // el proceso está a la espera, de que le envíen el mensaje para ejecutarse 
+

@@ -4,24 +4,27 @@
 
 import express from "express";
 import { Command, Option } from "commander";
-const app = express();
-
 const commander = new Command(); // instanciamos
 // .option --> recibe (comando, descripcion, valor default)
 
-commander
-  // .argument("[args...]", "argumentos no definidos")
-  .option("-p <port>", "port server descripcion", 8080)
-  .option("-e <environment>", "ambiente del servidor", "dev");
+// configuro
+// commander
+//   .option("-p <port>", "port server descripcion", 8080)
+//   .option("-e <environment>", "ambiente del servidor", "dev");
 
-commander.parse(); // para crear la configuración de los comandos. Es para 'guardar' el parse
+// commander.parse(); // para crear la configuración de los comandos. Es para 'guardar' el parse
 
-console.log(commander.opts()); // devuelve todos los comandos configurados en forma de objeto. OUTPUT: { p: '8081', e: 'prod' }
-console.log(commander.opts().p); // 8080
-console.log(commander.opts().e); // dev
+// visualizar
+// console.log(commander.opts()); // devuelve todos los comandos configurados en forma de objeto. OUTPUT: { p: '8081', e: 'prod' }
+// console.log(commander.opts().p); // 8080
+// console.log(commander.opts().e); // dev
+
+
 
 // # Usar los valores de commander
-/*-
+// /*
+const app = express();
+
 const PORT = commander.opts().p; // no le pongo valores por defecto porque ya los definí  en el option
 const ENVIRONMENT = commander.opts().e;
 
@@ -33,12 +36,13 @@ app.listen(PORT, () => {
   console.log(`http://localhost:${PORT}`);
   console.log(`Ambiente elegido ${ENVIRONMENT}`);
 });
-*/
+// */
 
 // console.log(commander.args); // los argumentos sueltos que le envío, porque puedo pasar argumentos sin flasgs que tenga configurado. sigo teniendo acceso a ellos en un array
 // // ⬆️ OUPUT: [ 's' ]
 
 //  Con validación
+
 // commander
 //   // .option("-p <port>", "port server descripcion", 8080).makeOptionMandatory(true) // hacerla obligatoria
 //   .option(
@@ -56,7 +60,9 @@ app.listen(PORT, () => {
 //     8080,
 //   )
 //   .addOption(
-//     new Option("-e <environment>", "ambiente")
+//     new Option("-e <environment>", "entorno o ambiente")
 //       .choices(["dev", "prod", "test"])
 //       .default("dev"),
 //   );
+// commander.parse();
+//   // .argument("[args...]", "argumentos no definidos")

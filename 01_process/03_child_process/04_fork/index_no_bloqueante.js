@@ -1,13 +1,13 @@
 // node index_no_bloqueante.js
 
 import express from 'express';
+
 import { fork } from 'child_process';
+
 import path from 'path';
 import { fileURLToPath } from 'url';
-
 const __filename = fileURLToPath(import.meta.url); // es una URL no, un path usable por Node
 const __dirname = path.dirname(__filename); // convierte esa URL en un path del sistema
-
 const scriptPath = path.resolve(__dirname, './utils/calculo.js'); // lo traigo leyendo el archivo 
 
 const app = express();
@@ -33,6 +33,7 @@ app.get('/calculo', (req, res) => {
       resultado: sum,
     });
   });
+  
 });
 
 const puerto = 8081;
