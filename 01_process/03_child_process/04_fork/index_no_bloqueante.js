@@ -1,12 +1,12 @@
-// node 01_process/03_child_process/04_fork/index_no_bloqueante.js
+// node index_no_bloqueante.js
 
 import express from 'express';
 import { fork } from 'child_process';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const __filename = fileURLToPath(import.meta.url); // es una URL no, un path usable por Node
+const __dirname = path.dirname(__filename); // convierte esa URL en un path del sistema
 
 const scriptPath = path.resolve(__dirname, './utils/calculo.js'); // lo traigo leyendo el archivo 
 
@@ -27,7 +27,7 @@ app.get('/calculo', (req, res) => {
   // entonces, cuando llega la req en /calculo, envía el mensaje con el metodo .send() y dentro de send, va el mensaje que quiero enviar
   computo.send('start');  // va el mensaje 'start'
 
-  // recibe acá, el calculo, en (sum) e imprime por pantalla el resultado
+  // recibe acá, el rta del calculo, en (sum) e imprime por pantalla el resultado
   computo.on('message', (sum) => {
     res.json({
       resultado: sum,

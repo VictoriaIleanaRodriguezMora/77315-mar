@@ -17,9 +17,9 @@ process.on('message', (msg) => {
     if (msg == 'start') {
         // va a realizar el calculo
         console.log(`Start calculo, PID: ${process.pid}`);
-        const sum = calculo();
+        const sum = calculo(); // ejecuta el calculo
         process.send(sum); // cuando termina de realizar el calculo, le envía AL PADRE, el rtado del calculo
 
     }
 });
-// el proceso está a la espere, de que le envíen el mensaje para ejecutarse 
+// el proceso está a la espera, de que le envíen el mensaje para ejecutarse 
