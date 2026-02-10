@@ -1,24 +1,30 @@
-console.log(process.argv);
+// node 02_argv.js
+
+// console.log(process.argv);
 // [
 //   'C:\\Users\\27462901130\\AppData\\Roaming\\nvm\\v22.13.0\
 // \node.exe',
 //   'C:\\Users\\27462901130\\Desktop\\virm\\backend_3\\argv.j
 // s'
 // ]
-console.log(process.argv[2]);
 
-import express, { json, urlencoded } from "express";
+// console.log(process.argv[0]);
+// console.log(process.argv[2]); // undefined
+
+/*
+import express from "express";
 const app = express();
 const PORT = process.argv[2] || 8080;
-
-// Son funciones middleware
-app.use(json());
-app.use(urlencoded({ extended: true }));
+// console.log(process.argv[2]); // ya no es undefined
 
 app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
 app.listen(PORT, () => {
-  console.log(`Example app listening on PORT ${PORT}`);
+  console.log(`http://localhost:${PORT}`);
 });
+*/
+
+// Acá pasamos argumentos por consola, que es pasar valores
+// En commander pasamos flags, porque definimos un comportamiento

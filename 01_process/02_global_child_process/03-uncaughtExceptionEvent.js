@@ -1,9 +1,6 @@
-// cd global_child_process
-// node 01_process/global_child_process/03-uncaughtExceptionEvent
-// node 01_process/03-uncaughtExceptionEvent
+// node 03-uncaughtExceptionEvent
 
-// el método 'on', recibe 2 parametros, el evento que escucha, y una fn callback
-// igual que el metodo addEventListener de js vainilla
+// 'uncaughtException' se dispara cuando ocurre un error que no fue atajado por el programa
 
 // el evento genera un código, que es recibido en la funcion
 process.on("uncaughtException", (error) => {

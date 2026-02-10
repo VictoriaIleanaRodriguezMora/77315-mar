@@ -1,4 +1,4 @@
-// node 01_process/03_child_process/03_spawn/03_spawn.js
+// node 03_spawn.js
 import { spawn } from 'child_process';
 
 // # la salida de la ejecución está en la vbariable child
